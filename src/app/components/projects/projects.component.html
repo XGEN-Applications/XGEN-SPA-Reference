@@ -15,16 +15,16 @@
     <thead class="bg-steelblue text-white">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" style="width: 40%;">Project Name</th>
-        <th scope="col" style="width: 40%">Details</th>
+        <th scope="col" style="width: 40%;">Project Title</th>
+        <th scope="col" style="width: 40%">Project Description</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Amazing lorem ipsum </td>
-        <td>Ott 235o</td>
+      <tr *ngFor="let project of projects; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{project?.ProjectTitle}} </td>
+        <td>{{Project?.ProjectDesc}}</td>
         <td>
           <span class="icon mr-2">
             <i class="fas fa-pen-square"></i>
@@ -35,90 +35,7 @@
           </span>
         </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Lipsum ipsum</td>
-        <td>Thornton</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Lorem A</td>
-        <td>the Bird</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Larry is </td>
-        <td>the Bird</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>Larry Larry Larry Larry</td>
-        <td>the Bird</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">6</th>
-        <td>Larry Bird Bird</td>
-        <td>the Bird</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">8</th>
-        <td>Bird BirdBirdLarry</td>
-        <td>Birdthe Bird</td>
-        <td>
-          <span class="icon mr-2">
-            <i class="fas fa-pen-square"></i>
-          </span>
-
-          <span class="icon">
-            <i class="fas fa-minus-square"></i>
-          </span>
-        </td>
-      </tr>
+      
     </tbody>
   </table>
 </div>

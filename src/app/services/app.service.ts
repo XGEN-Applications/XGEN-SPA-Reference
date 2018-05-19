@@ -13,7 +13,8 @@ export class AppService {
 
   public environmentName: string = environment.production ? 'Production' : 'Dev';
   public API_LINK: string = environment.api;
-  public token: string = '';
+  // try to get token from localstorage on init, if alredy logged in
+  public token: string = localStorage.getItem('token'); 
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -53,7 +54,9 @@ export class AppService {
     return this.http.post(`${this.API_LINK}/users/logout`, { token: this.token });
   }
 
-  getProjects(id) {
+  // id is optional argument
+  getProjects(id?) {
+    console.log(this.token)
     const link = id ? `${this.API_LINK}/projects/${id}` : `${this.API_LINK}/projects`
     return this.http.get(link, this.httpOptions);
   }
