@@ -15,6 +15,10 @@ export class AppService {
   public API_LINK: string = environment.api;
   // try to get token from localstorage on init, if alredy logged in
   public token: string = localStorage.getItem('token'); 
+
+  // used for project-form
+  public selectedProject: any;
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -56,17 +60,16 @@ export class AppService {
 
   // id is optional argument
   getProjects(id?) {
-    console.log(this.token)
     const link = id ? `${this.API_LINK}/projects/${id}` : `${this.API_LINK}/projects`
     return this.http.get(link, this.httpOptions);
   }
 
   addProject(project) {
-    return this.http.post( `${this.API_LINK}/projects`, project);
+    return this.http.post(`${this.API_LINK}/projects`, project, this.httpOptions);
   }
 
   updateProject(project) {
-    return this.http.put( `${this.API_LINK}/projects`, project);
+    return this.http.put( `${this.API_LINK}/projects`, project, this.httpOptions);
   }
 
   deleteProject(id) {
@@ -74,7 +77,7 @@ export class AppService {
   }
 
   searchProject(fields) {
-    return this.http.post( `${this.API_LINK}/projects/search`, fields);
+    return this.http.post( `${this.API_LINK}/projects/search`, fields, this.httpOptions);
   }
 
 }

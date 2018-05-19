@@ -22,12 +22,23 @@ export class ProjectsComponent implements OnInit {
       if(response.statusCode == 200) {
         this.projects = JSON.parse(response.body);
       } else {
-        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(response.body) });
+        const message = JSON.parse(response.body);
+        this.app.messageAlert.emit({ alert: 'error', message });
+        if(message == 'unathorized') this.app.navigate('login');
       }
       this.app.showLoading = false;
     }, err => {
       this.app.messageAlert.emit({ alert: 'error', message: 'server error' });
     });
+  }
+
+  upsertProject(project) {
+    this.app.selectedProject = project;
+    this.app.childNavigate('home', 'home-router', 'project-form');
+  }
+
+  deleteProject(project) {
+    console.log('TODO')
   }
 
 }

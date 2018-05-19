@@ -4,20 +4,41 @@
 </div>
 
 <div class="col-md-12 col-lg-6 col-lg-offset-6 mx-auto">
-  <div class="p-2">
-    <input type="text" class="unstyled-input mb-2" placeholder="Field">
+  <form class="p-2" (submit)="saveProject()">
+    
+    <div class="input-group">
+      <input [(ngModel)]="app.selectedProject.ProjectTitle" name="title" type="text" class="unstyled-input mb-2" placeholder="Project Title">
+      <input [(ngModel)]="app.selectedProject.ProjectDesc" name="description" type="text" class="unstyled-input mb-2" placeholder="Project Description">
+    </div>
+    
+    <div class="input-group">
+      <input class="form-control" placeholder="Project Start Date" name="dstart" [(ngModel)]="app.selectedProject.ProjectStartDate" ngbDatepicker #start="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="start.toggle()" type="button">
+          <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+        </button>
+      </div>
+    </div>
 
-    <select class="d-block mb-2">
+    <div class="input-group">
+      <input class="form-control" placeholder="Project End Date" name="dend" [(ngModel)]="app.selectedProject.ProjectEndDate" ngbDatepicker #end="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="end.toggle()" type="button">
+          <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+        </button>
+      </div>
+    </div>
+    <!-- <select class="d-block mb-2">
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
-    </select>
-
+    </select> -->
+    <br />
     <div class="buttons text-right">
       <button class="btn btn-danger mr-3" (click)="app.childNavigate('home', 'home-router', 'projects')">Cancel</button>
-      <button class="btn save-button" (click)="app.childNavigate('home', 'home-router', 'projects')">Save</button>
+      <button type="submit" class="btn save-button" >Save</button>
     </div>
-  </div>
+  </form>
 
 </div>
