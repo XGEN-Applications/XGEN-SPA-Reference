@@ -67,3 +67,27 @@ select {
   border-radius: 10px;
   outline: 0 !important;
 }
+
+// example basic spinner 
+.spinner {
+  border: 5px solid white;
+  border-radius: 50%;
+  border-top: 5px solid steelblue;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

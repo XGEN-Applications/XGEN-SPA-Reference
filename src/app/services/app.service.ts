@@ -21,6 +21,8 @@ export class AppService {
     })
   };
   
+  public showLoading: boolean = false;
+
   constructor(private router: Router, public http: HttpClient) { }
 
   navigate(route) {
@@ -36,7 +38,7 @@ export class AppService {
   }
 
   register(user) {
-    return this.http.post(`${this.API_LINK}/users/user`, user);
+    return this.http.post(`${this.API_LINK}/users/register`, user);
   }
 
   login(credentials) {

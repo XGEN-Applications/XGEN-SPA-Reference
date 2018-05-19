@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.app.showLoading = true;
     this.app.login(this.credentials).subscribe(result => {
       if(result['statusCode'] == 200) {
         // login success, save token to service and local storage
@@ -28,11 +29,14 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', token);
         this.app.token = token;
         this.app.navigate('home');
+        this.app.showLoading = false;
       } else {
         // login failed TODO: Show message
-        this.app.messageAlert.emit({ alert: 'Error', message: 'Login failed!'});
+        console.log(result);
+        this.app.showLoading = false;
+        this.app.messageAlert.emit({ alert: 'error', message: 'Login failed!'});
       }
-    }, err => console.log('eee', err));
+    }, err => console.log(err));
   }
 
 }
