@@ -1,0 +1,64 @@
+<div class="c-alert-success mb-3 " *ngIf="alerts['success'] ">
+  <div class="row ">
+    <div class="col-3 c-alert-icon text-center d-flex flex-column justify-content-center ">
+      <i class="far fa-check-circle fa-3x ml-3 "></i>
+    </div>
+
+    <div class="col-7 pt-2 pb-2 ">
+      <h3 class="c-alert-heading ">
+        Success!
+      </h3>
+      <span class="c-alert-text ">
+        {{message}}
+      </span>
+    </div>
+
+    <div class="col-2 close-alert text-center cursor-pointer" (click)="hideAlert('success')">
+      <i class="fas fa-times "></i>
+    </div>
+  </div>
+</div>
+
+<div class="c-alert-error mb-3 " *ngIf="alerts['error'] ">
+  <div class="row ">
+    <div class="col-3 c-alert-icon text-center d-flex flex-column justify-content-center">
+      <i class="far fa-times-circle fa-3x ml-3 "></i>
+    </div>
+
+    <div class="col-7 pt-2 pb-2 ">
+      <h3 class="c-alert-heading ">
+        Error!
+      </h3>
+      <span class="c-alert-text ">
+        {{message}}
+      </span>
+    </div>
+
+    <div class="col-2 close-alert text-center cursor-pointer " (click)="hideAlert('error')">
+      <i class="fas fa-times "></i>
+    </div>
+
+  </div>
+</div>
+
+<div class="c-alert-info mb-3 " *ngIf="alerts['info'] ">
+  <div class="row ">
+    <div class="col-3 c-alert-icon text-center d-flex flex-column justify-content-center ">
+      <i class="fas fa-info-circle fa-3x ml-3 "></i>
+    </div>
+
+    <div class="col-7 pt-2 pb-2 ">
+      <h3 class="c-alert-heading ">
+        Information!
+      </h3>
+      <span class="c-alert-text ">
+        {{message}}
+      </span>
+    </div>
+
+    <div class="col-2 close-alert text-center cursor-pointer" (click)="hideAlert('info')">
+      <i class="fas fa-times"></i>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.side-nav {
+    width: 15vw;
+}
+
+.outlet-view {
+    width: 85vw;
+}
+
+@media (max-width: 999px) {
+    .side-nav {
+        display: none;
+    }
+
+    .outlet-view {
+        width: 100vw;
+    }
+}

@@ -1,0 +1,52 @@
+// ---- ICONS ----- //
+
+.fa-cog {
+    color: white;
+}
+
+.fa-sign-out-alt {
+    color: rgb(240, 18, 74);
+}
+
+.side-nav-container {
+    width: 15vw;
+    height: 100vh;
+    overflow: hidden !important;
+    background-color: rgb(37, 110, 170);
+
+}
+
+.page-info-container {
+    width: 100vw;
+    height: 12vh;
+    background-color: rgb(9, 87, 151);
+}
+
+.nav-items-container {
+    width: 100vw;
+    height: 75vh;
+    padding-left: 10px;
+}
+
+.user-info-container {
+    width: 100vw;
+    height: 13vh;
+    padding: 4px;
+    background-color: rgb(9, 87, 151);
+}
+
+.setting-option {
+    * {
+        font-size: 1.1em;
+    }
+}
+
+h5, p {
+    font-family: 'rajdhani-medium';
+    color: white;
+    font-size: 1.35em;
+}
+
+.nav-item > h5 {
+    font-size: 1.55em !important;
+}

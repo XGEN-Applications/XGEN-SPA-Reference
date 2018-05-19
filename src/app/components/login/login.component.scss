@@ -1,0 +1,66 @@
+// ----- ICONS ----- //
+
+.fa-at, .fa-lock {
+    color: lightseagreen;
+}
+
+// ----- ICONS END ----- //
+
+
+.login-container {
+    width: 100vw;
+}
+
+.custom-input-field {
+    width: 85%;
+    margin: 0 auto;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1.5px solid whitesmoke;
+}
+
+.unstyled-input {
+    width: 85%;
+}
+
+.mobile-login {
+    max-width: 600px;
+}
+
+.unstyled-input:focus, .unstyled-input:valid {
+    color: rgb(5, 141, 141);
+}
+
+// ----- BUTTONS ----- //
+
+button {
+    font-family: 'quicksand-medium';
+    width: 85%;
+    border-radius: 10px;
+}
+
+.login-button {
+    background-color: rgb(16, 206, 95);
+    color: white;
+}
+
+.register-button {
+    background-color: steelblue;
+    color: white;
+}
+
+// ----- BUTTONS END ----- //
+
+h5 {
+    font-family: 'rajdhani-medium';
+}
+
+p {
+    font-family: 'rajdhani-regular';
+}
+
+@media (min-width: 1000px) {
+    .mobile-login {
+        padding: 15px;
+    }
+}

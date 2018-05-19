@@ -1,0 +1,29 @@
+h1 {
+  font-family: 'rajdhani-regular';
+}
+
+.fa-pen-square {
+  color: rgb(39, 123, 250);
+  font-size: 1.4em;
+}
+
+.fa-minus-square {
+  color: rgb(196, 60, 60);
+  font-size: 1.4em;
+}
+
+.add-project-button {
+  font-size: 1.7em;
+}
+
+.fa-plus-square {
+  font-size: 1.7em;
+  color: steelblue;
+}
+
+@media (max-width: 561px) {
+  .fa-pen-square,
+  .fa-minus-square {
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+
+// ----- FONTS ----- //
+
+@font-face {
+  font-family: 'quicksand-light';
+  src: url('./assets/fonts/quicksand/Quicksand-Light.ttf');
+}
+
+@font-face {
+  font-family: 'quicksand-regular';
+  src: url('./assets/fonts/quicksand/Quicksand-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'quicksand-medium';
+  src: url('./assets/fonts/quicksand/Quicksand-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'rajdhani-light';
+  src: url('./assets/fonts/rajdhani/Rajdhani-Light.ttf');
+}
+
+@font-face {
+  font-family: 'rajdhani-regular';
+  src: url('./assets/fonts/rajdhani/Rajdhani-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'rajdhani-medium';
+  src: url('./assets/fonts/rajdhani/Rajdhani-Medium.ttf');
+}
+
+//
+
+// ----- Input fields ----- //
+
+.unstyled-input {
+  border: none !important;
+}
+
+.unstyled-input:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+// ----- Misc. stuff ----- //
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.light-hr {
+  background-color: rgb(206, 206, 206) !important;
+}
+
+.bg-steelblue {
+  background-color: steelblue !important;
+}
+
+select {
+  border: 1.5px solid whitesmoke !important;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  outline: 0 !important;
+}

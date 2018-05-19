@@ -1,0 +1,21 @@
+<div class="col-12 mb-4 pt-2 text-center">
+  <h1>Settings</h1>
+  <hr>
+</div>
+
+<div class="col-12 col-lg-6 col-lg-offset-6 mx-auto">
+  <h3>Select language</h3>
+
+  <select class="d-block mb-2">
+    <option value="english">English</option>
+    <option value="german">German</option>
+    <option value="japanese">Japanese</option>
+  </select>
+
+  <hr>
+
+  <div class="buttons text-right">
+    <button class="btn btn-danger" (click)="app.navigate('home')">Cancel</button>
+    <button class="btn save-button ml-3" (click)="app.navigate('home')">Save</button>
+  </div>
+</div>

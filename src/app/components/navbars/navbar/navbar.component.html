@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: steelblue;">
+  <a class="navbar-brand mr-4 cursorPointer">
+    <img src="../../../assets/logo/placeholder-logo.png" alt="Logo" width="100">
+  </a>
+  <button class="navbar-toggler" type="button" (click)="showMobileNav()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto pb-2 pt-1">
+      <li class="nav-item" (click)="app.navigate('home')">
+        <a class="nav-link cursor-pointer">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link cursor-pointer">Item 1</a>
+      </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link cursor-pointer">Item 2</a>
+      </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link cursor-pointer">Item 3</a>
+      </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link cursor-pointer">Item 4</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+.navbar {
+    .nav-link {
+        font-size: 1.2em;
+        color: white;
+    }
+
+    .navbar-nav > li.active {
+        border-bottom: 2px solid steelblue;
+    }
+
+}
+
+a {
+    text-decoration: none !important;
+}

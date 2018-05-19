@@ -1,0 +1,44 @@
+<div class="mobile-nav" *ngIf="show">
+  <div class="row mb-5">
+    <div class="col-12 text-right text-white pr-4 pt-4">
+      <span class="icon cursor-pointer" (click)="hide()">
+        <i class="fas fa-times exit-icon"></i>
+      </span>
+    </div>
+    <div class="col-12 text-center">
+      <img src="../../../assets/logo/placeholder-logo.png" width="150" alt="Logo">
+    </div>
+  </div>
+
+  <div class="row text-white text-center">
+    <div class="col-12">
+      <ul class="list-unstyled">
+        <li class="mb-5 cursor-pointer" (click)="app.navigate('home'); hide();">
+          <h3>
+            Homepage
+          </h3>
+        </li>
+        <li class="mb-5 cursor-pointer">
+          <h3>
+            About us
+          </h3>
+        </li>
+        <li class="mb-5 cursor-pointer">
+          <h3>
+            Contact us
+          </h3>
+        </li>
+        <li class="mb-5 cursor-pointer">
+          <h3>
+            Help Center
+          </h3>
+        </li>
+        <li class="mb-5 cursor-pointer">
+          <h3>
+            FAQ
+          </h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

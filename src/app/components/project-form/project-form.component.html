@@ -1,0 +1,23 @@
+<div class="col-12 text-center pt-5">
+  <h1 cla>Upsert project</h1>
+  <hr>
+</div>
+
+<div class="col-md-12 col-lg-6 col-lg-offset-6 mx-auto">
+  <div class="p-2">
+    <input type="text" class="unstyled-input mb-2" placeholder="Field">
+
+    <select class="d-block mb-2">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <div class="buttons text-right">
+      <button class="btn btn-danger mr-3" (click)="app.childNavigate('home', 'home-router', 'projects')">Cancel</button>
+      <button class="btn save-button" (click)="app.childNavigate('home', 'home-router', 'projects')">Save</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,64 @@
+.c-alert-error,
+.c-alert-success,
+.c-alert-info {
+    z-index: 1000000 !important;
+}
+
+// custom alerts
+%alert-base {
+    background-color: white;
+    width: 400px;
+    min-height: 70px;
+    border: 2px solid rgb(226, 226, 226);
+    .c-alert-text {
+      color: rgb(83, 83, 83);
+      font-size: 1.1em;
+    }
+    animation: slide-in 0.1s ease;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+  }
+  
+  @keyframes slide-in {
+    from {
+      right: -100px;
+    }
+    to {
+      right: 50px;
+    }
+  }
+  
+  .c-alert-success {
+    @extend %alert-base;
+    border-left: 2px solid #46df22;
+    .c-alert-icon {
+      color: #46df22;
+    }
+    .c-alert-heading {
+      color: #46df22;
+    }
+  }
+  
+  .c-alert-info {
+    @extend %alert-base;
+    border-left: 2px solid #0587da;
+    .c-alert-icon {
+      color: #0587da;
+    }
+    .c-alert-heading {
+      color: #0587da;
+    }
+  }
+  
+  .c-alert-error {
+    @extend %alert-base;
+    border-left: 2px solid #f51d1d;
+    .c-alert-icon {
+      color: #f51d1d;
+    }
+    .c-alert-heading {
+      color: #f51d1d;
+    }
+  }
+  
