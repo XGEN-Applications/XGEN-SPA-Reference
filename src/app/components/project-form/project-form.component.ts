@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../services/app.service';
+import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-project-form',
@@ -9,7 +10,10 @@ import { AppService } from '../../services/app.service';
 export class ProjectFormComponent implements OnInit {
 
   public isUpdate: boolean = false;
-  constructor(public app: AppService) { }
+  public fromDate: NgbDateStruct;
+  public toDate: NgbDateStruct;
+
+  constructor(public calendar: NgbCalendar, public app: AppService) { }
 
   ngOnInit() {
     if(this.app.selectedProject) {
