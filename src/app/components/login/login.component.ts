@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
         const { token } = JSON.parse(result['body']);
         localStorage.setItem('token', token);
         this.app.token = token;
+        this.app.setupHeaders(token);
         this.app.navigate('home');
         this.app.showLoading = false;
       } else {

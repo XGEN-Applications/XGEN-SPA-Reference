@@ -19,12 +19,7 @@ export class AppService {
   // used for project-form
   public selectedProject: any;
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': this.token
-    })
-  };
+  public httpOptions;
   
   public showLoading: boolean = false;
 
@@ -48,6 +43,15 @@ export class AppService {
 
   login(credentials) {
     return this.http.post(`${this.API_LINK}/users/login`, credentials);
+  }
+
+  setupHeaders(token) {
+    this.httpOptions= { 
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': this.token
+      })
+    }
   }
 
   getCurrentUser() {
