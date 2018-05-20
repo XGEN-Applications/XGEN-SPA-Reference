@@ -11,4 +11,10 @@ export class SideNavbarComponent implements OnInit {
 
   ngOnInit() {}
 
+  logout() {
+    localStorage.removeItem('token');
+    this.app.logout();
+    this.app.navigate('login');
+  }
+
 }

@@ -2,6 +2,7 @@ import { environment } from './../../environments/environment';
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +24,27 @@ export class AppService {
   
   public showLoading: boolean = false;
 
-  constructor(private router: Router, public http: HttpClient) { }
+  constructor(private router: Router, public http: HttpClient) { 
+    this.token = this.getLocalToken();
+    if(this.token) this.setupHeaders(this.token);
+  }
+
+  getLocalToken() {
+    return localStorage.getItem('token');
+  }
+
+  public isAuthenticated(): boolean {
+    const jwt = new JwtHelperService();
+    return !jwt.isTokenExpired(this.getLocalToken());
+  }
 
   navigate(route) {
+    this.showLoading = false;
     this.router.navigate([route]);
   }
 
   childNavigate(route, outlet, child) {
+    this.showLoading = false;
     this.router.navigate([`/${route}`, { outlets: { [outlet]: [child] } }]);
   }
 

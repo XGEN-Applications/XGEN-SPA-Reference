@@ -34,6 +34,7 @@ export class RegisterComponent implements OnInit {
         message = { alert: 'error', message: JSON.parse(result['body'])}
       }
 
+      this.app.showLoading = false;
       this.app.messageAlert.emit(message);
       
     }, err => {

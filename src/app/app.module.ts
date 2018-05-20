@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { routing } from './app.routing';
-// import { routing, appRoutingProviders } from './app.routing'; - TODO when implement AUTHGUARD
+import { routing, appRoutingProviders } from './app.routing';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import fontawesome from '@fortawesome/fontawesome';
@@ -81,7 +80,7 @@ fontawesome.library.add(
   ],
 
   providers: [
-    // appRoutingProviders
+    appRoutingProviders,
     AppService
   ],
 
