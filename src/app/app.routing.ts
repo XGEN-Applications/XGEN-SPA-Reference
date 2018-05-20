@@ -1,3 +1,7 @@
+import { HelpComponent } from './components/help/help.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +17,10 @@ import { AuthGuard } from './auth.guard';
 const HomepageChildren = [
   { path: 'projects', component: ProjectsComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: 'project-form', component: ProjectFormComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
+  { path: 'about', component: AboutComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
+  { path: 'contact', component: ContactComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
+  { path: 'faq', component: FaqComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
+  { path: 'help', component: HelpComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: 'settings', component: SettingsComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: '', component: ProjectsComponent, outlet: 'home-router', canActivate: [ AuthGuard ] }
 ];

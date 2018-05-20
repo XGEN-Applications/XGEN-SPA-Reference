@@ -41,6 +41,10 @@ import { AlertMessagesComponent } from './components/alert-messages/alert-messag
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectFormComponent } from './components/project-form/project-form.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { AboutComponent } from './components/about/about.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HelpComponent } from './components/help/help.component';
 
 fontawesome.library.add(
   faUser,
@@ -68,7 +72,11 @@ fontawesome.library.add(
     AlertMessagesComponent,
     ProjectsComponent,
     ProjectFormComponent,
-    SettingsComponent
+    SettingsComponent,
+    AboutComponent,
+    FaqComponent,
+    ContactComponent,
+    HelpComponent
   ],
 
   imports: [
