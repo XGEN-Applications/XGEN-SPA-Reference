@@ -10,8 +10,8 @@ import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 export class ProjectFormComponent implements OnInit {
 
   public isUpdate: boolean = false;
-  public fromDate: NgbDateStruct;
-  public toDate: NgbDateStruct;
+  public fromDate: NgbDateStruct = this.calendar.getToday();
+  public toDate: NgbDateStruct = this.calendar.getToday();
 
   constructor(public calendar: NgbCalendar, public app: AppService) { }
 
