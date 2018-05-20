@@ -12,7 +12,7 @@
     </div>
     
     <div class="input-group">
-      <input class="form-control" placeholder="Project Start Date" name="dstart" [(ngModel)]="app.selectedProject.ProjectStartDate" ngbDatepicker #start="ngbDatepicker">
+      <input class="form-control" placeholder="Project Start Date" name="dstart" [(ngModel)]="fromDate" ngbDatepicker #start="ngbDatepicker">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="start.toggle()" type="button">
           <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="input-group">
-      <input class="form-control" placeholder="Project End Date" name="dend" [(ngModel)]="app.selectedProject.ProjectEndDate" ngbDatepicker #end="ngbDatepicker">
+      <input class="form-control" placeholder="Project End Date" name="dend" [(ngModel)]="toDate" ngbDatepicker #end="ngbDatepicker">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="end.toggle()" type="button">
           <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
