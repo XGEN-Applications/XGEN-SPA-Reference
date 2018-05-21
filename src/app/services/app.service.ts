@@ -38,6 +38,11 @@ export class AppService {
     return !jwt.isTokenExpired(this.getLocalToken());
   }
 
+  public getUserId() {
+    const jwt = new JwtHelperService();
+    return jwt.decodeToken(this.getLocalToken());
+  }
+
   navigate(route) {
     this.showLoading = false;
     this.router.navigate([route]);
@@ -97,6 +102,11 @@ export class AppService {
 
   searchProject(fields) {
     return this.http.post( `${this.API_LINK}/projects/search`, fields, this.httpOptions);
+  }
+
+  parseDate(date) {
+    return new Date(date).toISOString().slice(0, 19).replace('T', ' ')
+
   }
 
 }

@@ -22,6 +22,7 @@ export class ProjectsComponent implements OnInit {
       if(response.statusCode == 200) {
         this.projects = JSON.parse(response.body);
       } else {
+        this.projects = [];
         const message = JSON.parse(response.body);
         this.app.messageAlert.emit({ alert: 'error', message });
         if(message == 'unathorized') this.app.navigate('login');

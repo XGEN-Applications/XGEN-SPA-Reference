@@ -41,30 +41,62 @@ export class ProjectFormComponent implements OnInit {
   }
 
   saveProject() {
+    
+    // Test Values as specified:
+    // Objective ID = 2
+    // User ID = 1 (used in CreateBy and UpdateBy)
+    // Optional Test Values (if needed):
+    // Goal ID = 2
+    // Plan ID = 2
+    const { id } = this.app.getUserId(); 
+    console.log(id)
+    //Logged user Id, this should be done on server side, this is just a reference
+    this.app.selectedProject.ObjectiveID = 2;
+
+    // bootstrap date picker date conversion to mysql date
+
     if(this.fromDate) {
-      this.app.selectedProject.ProjectStartDate = new Date(this.fromDate.year, this.fromDate.month, this.fromDate.day);
+      const date = moment(new Date(this.fromDate.year, this.fromDate.month-1, this.fromDate.day)).format('YYYY-MM-DD');
+      this.app.selectedProject.ProjectStartDate = this.app.parseDate(date);
     }
     if(this.toDate) {
-      this.app.selectedProject.ProjectEndDate = new Date(this.toDate.year, this.toDate.month, this.toDate.day);
+      const date = moment(new Date(this.toDate.year, this.toDate.month-1, this.toDate.day)).format('YYYY-MM-DD');
+      this.app.selectedProject.ProjectEndDate = this.app.parseDate(date);
     }
-    if(this.isUpdate) {
+
+    if(this.isUpdate) { 
+
+      this.app.selectedProject.UpdateBy = id;
+
       this.app.updateProject(this.app.selectedProject).subscribe((result: any) => {
+      
         if(result.statusCode == 200) {
           this.app.messageAlert.emit({ alert: 'info', message: 'project updated' });
         } else {
           this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
         }
-      }, err => this.app.messageAlert.emit({ alert: 'error', message: 'server error' }));
+
+      }, err => {
+        this.app.messageAlert.emit({ alert: 'error', message: 'server error' })
+      });
+
     } else {
+
+      this.app.selectedProject.CreateBy = id;
+
       this.app.addProject(this.app.selectedProject).subscribe((result: any) => {
         if(result.statusCode == 200) {
           this.app.messageAlert.emit({ alert: 'info', message: 'project inserted' });
         } else {
           this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
         }
-      }, err => this.app.messageAlert.emit({ alert: 'error', message: 'server error' }));
+
+      }, err => {
+        this.app.messageAlert.emit({ alert: 'error', message: 'server error' })
+      });
+
     }
-    this.app.navigate('projects');
+    this.app.navigate('home');
   
   }
 
