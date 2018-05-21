@@ -1,17 +1,28 @@
+.desktop-wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
 .side-nav {
-    width: 15vw;
+  width: 15%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .outlet-view {
-    width: 85vw;
+  width: 85%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 @media (max-width: 999px) {
-    .side-nav {
-        display: none;
-    }
+  .side-nav {
+    display: none;
+  }
 
-    .outlet-view {
-        width: 100vw;
-    }
+  .outlet-view {
+    width: 100vw;
+  }
 }

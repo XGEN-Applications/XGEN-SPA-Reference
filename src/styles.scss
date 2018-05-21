@@ -76,8 +76,8 @@ select {
   width: 120px;
   height: 120px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  left: calc(50% - 60px);
+  top: calc(50% - 60px);
   -webkit-animation: spin 1s linear infinite; /* Safari */
   animation: spin 1s linear infinite;
 }
