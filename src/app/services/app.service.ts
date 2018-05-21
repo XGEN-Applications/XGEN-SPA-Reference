@@ -110,15 +110,6 @@ export class AppService {
     return new Date(date).toISOString().slice(0, 19).replace('T', ' ')
   }
 
-  // showConfirmMessage(title: string, message: string, callback: any, inputParams?: any) {
-  //   const modalRef = this.modalService.open(ConfirmComponent)
-  //   modalRef.componentInstance.title = title;
-  //   modalRef.componentInstance.message = message;
-  //   modalRef.result.then(data => {
-  //     if(data == 'ok') callback(inputParams)
-  //   })
-  // }
-
   showConfirmMessagePromise(title: string, message: string) {
     const modalRef = this.modalService.open(ConfirmComponent)
     modalRef.componentInstance.title = title;
