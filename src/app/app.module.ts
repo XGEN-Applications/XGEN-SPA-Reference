@@ -45,6 +45,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 fontawesome.library.add(
   faUser,
@@ -76,7 +77,12 @@ fontawesome.library.add(
     AboutComponent,
     FaqComponent,
     ContactComponent,
-    HelpComponent
+    HelpComponent,
+    ConfirmComponent
+  ],
+
+  entryComponents: [
+    ConfirmComponent
   ],
 
   imports: [

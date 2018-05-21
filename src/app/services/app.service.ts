@@ -3,6 +3,8 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmComponent } from '../components/confirm/confirm.component';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +26,7 @@ export class AppService {
   
   public showLoading: boolean = false;
 
-  constructor(private router: Router, public http: HttpClient) { 
+  constructor(private router: Router, public http: HttpClient, private modalService: NgbModal) { 
     this.token = this.getLocalToken();
     if(this.token) this.setupHeaders(this.token);
   }
@@ -106,7 +108,23 @@ export class AppService {
 
   parseDate(date) {
     return new Date(date).toISOString().slice(0, 19).replace('T', ' ')
-
   }
+
+  // showConfirmMessage(title: string, message: string, callback: any, inputParams?: any) {
+  //   const modalRef = this.modalService.open(ConfirmComponent)
+  //   modalRef.componentInstance.title = title;
+  //   modalRef.componentInstance.message = message;
+  //   modalRef.result.then(data => {
+  //     if(data == 'ok') callback(inputParams)
+  //   })
+  // }
+
+  showConfirmMessagePromise(title: string, message: string) {
+    const modalRef = this.modalService.open(ConfirmComponent)
+    modalRef.componentInstance.title = title;
+    modalRef.componentInstance.message = message;
+    return modalRef.result
+  }
+
 
 }

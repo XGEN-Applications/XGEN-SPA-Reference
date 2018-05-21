@@ -38,8 +38,25 @@ export class ProjectsComponent implements OnInit {
     this.app.childNavigate('home', 'home-router', 'project-form');
   }
 
+  confirmDeleteProject(project) {
+    this.app.showConfirmMessagePromise('Confirm', 'Delete project?')    
+      .then(result => {
+        if(result == 'ok') this.deleteProject(project)
+      })
+      .catch(err => this.app.messageAlert.emit( {alert: 'error', message: 'cannot delete proejct'}))
+  }
+
   deleteProject(project) {
-    console.log('TODO')
+    this.app.showLoading = true;
+    this.app.deleteProject(project.ProjectID).subscribe((result: any) => {
+      if(result.statusCode == 200) {
+        const index = this.projects.indexOf(project)
+        this.projects.splice(index, 1);
+        this.app.messageAlert.emit({ alert: 'info', message: 'project deleted' });
+      } else {
+        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
+      }
+    })
   }
 
 }
