@@ -5,23 +5,25 @@
 
 <div class="col-md-12 col-lg-6 col-lg-offset-6 mx-auto">
   <form class="p-2" (submit)="saveProject()">
-    
+
     <div class="input-group">
       <input [(ngModel)]="app.selectedProject.ProjectTitle" name="title" type="text" class="unstyled-input mb-2" placeholder="Project Title">
       <input [(ngModel)]="app.selectedProject.ProjectDesc" name="description" type="text" class="unstyled-input mb-2" placeholder="Project Description">
     </div>
-    
+    <hr>
+    <label for="start_date">Start date</label>
     <div class="input-group">
-      <input class="form-control" placeholder="Project Start Date" name="dstart" [(ngModel)]="fromDate" ngbDatepicker #start="ngbDatepicker">
+      <input class="form-control" id="start_date" placeholder="Project Start Date" name="dstart" [(ngModel)]="fromDate" ngbDatepicker #start="ngbDatepicker">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="start.toggle()" type="button">
           <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
         </button>
       </div>
     </div>
-
+    <hr>
+    <label for="end_date">End date</label>
     <div class="input-group">
-      <input class="form-control" placeholder="Project End Date" name="dend" [(ngModel)]="toDate" ngbDatepicker #end="ngbDatepicker">
+      <input class="form-control" id="end_date" placeholder="Project End Date" name="dend" [(ngModel)]="toDate" ngbDatepicker #end="ngbDatepicker">
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" (click)="end.toggle()" type="button">
           <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>

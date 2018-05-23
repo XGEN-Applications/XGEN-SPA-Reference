@@ -68,7 +68,7 @@ select {
   outline: 0 !important;
 }
 
-// example basic spinner 
+// example basic spinner
 .spinner {
   border: 5px solid white;
   border-radius: 50%;
@@ -90,4 +90,10 @@ select {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.nav-text{
+  color: #0587da;
+  width: 100%;
+  text-align: right;
 }
