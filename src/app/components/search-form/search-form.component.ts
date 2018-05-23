@@ -1,3 +1,4 @@
+import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { AppService } from './../../services/app.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,7 +23,10 @@ export class SearchFormComponent implements OnInit {
     OrgID: null
   }
 
-  constructor(public app: AppService) { }
+  public fromDate: NgbDateStruct = this.calendar.getToday();
+  public toDate: NgbDateStruct = this.calendar.getToday();
+
+  constructor(public app: AppService, public calendar: NgbCalendar) { }
 
   ngOnInit() {
   }
