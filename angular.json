@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "xgem-frontend": {
+    "xgen-spa-reference": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/xgem-frontend",
+            "outputPath": "dist/xgen-spa-reference",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -55,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "xgem-frontend:build"
+            "browserTarget": "xgen-spa-reference:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "xgem-frontend:build:production"
+              "browserTarget": "xgen-spa-reference:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "xgem-frontend:build"
+            "browserTarget": "xgen-spa-reference:build"
           }
         },
         "test": {
@@ -100,7 +100,7 @@
         }
       }
     },
-    "xgem-frontend-e2e": {
+    "xgen-spa-reference-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -108,7 +108,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "xgem-frontend:serve"
+            "devServerTarget": "xgen-spa-reference:serve"
           }
         },
         "lint": {
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "xgem-frontend"
+  "defaultProject": "xgen-spa-reference"
 }
