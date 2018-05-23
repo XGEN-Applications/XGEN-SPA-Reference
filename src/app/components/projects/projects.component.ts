@@ -9,6 +9,7 @@ import { AppService } from '../../services/app.service';
 export class ProjectsComponent implements OnInit {
 
   public projects: Array<any> = [];
+  public search: string = '';
 
   constructor(public app: AppService) { }
 

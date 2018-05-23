@@ -18,24 +18,29 @@
             Projects
           </h3>
         </li>
-        <li class="mb-5 cursor-pointer">
+        <li class="mb-5 cursor-pointer" (click)="app.childNavigate('home', 'home-router', 'about'); hide()">
           <h3>
             About us
           </h3>
         </li>
-        <li class="mb-5 cursor-pointer">
+        <li class="mb-5 cursor-pointer"  (click)="app.childNavigate('home', 'home-router', 'contact'); hide()">
           <h3>
             Contact us
           </h3>
         </li>
-        <li class="mb-5 cursor-pointer">
+        <li class="mb-5 cursor-pointer"  (click)="app.childNavigate('home', 'home-router', 'help'); hide()">
           <h3>
             Help Center
           </h3>
         </li>
-        <li class="mb-5 cursor-pointer">
+        <li class="mb-5 cursor-pointer"  (click)="app.childNavigate('home', 'home-router', 'faq'); hide()">
           <h3>
             FAQ
+          </h3>
+        </li>
+        <li class="mb-5 cursor-pointer"  (click)="logout(); hide()">
+          <h3>
+            Logout
           </h3>
         </li>
       </ul>

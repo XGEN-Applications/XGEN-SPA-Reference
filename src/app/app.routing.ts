@@ -9,6 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectFormComponent } from './components/project-form/project-form.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AuthGuard } from './auth.guard';
 
@@ -21,6 +22,7 @@ const HomepageChildren = [
   { path: 'contact', component: ContactComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: 'faq', component: FaqComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: 'help', component: HelpComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
+  { path: 'search', component: SearchFormComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: 'settings', component: SettingsComponent, outlet: 'home-router', canActivate: [ AuthGuard ] },
   { path: '', component: ProjectsComponent, outlet: 'home-router', canActivate: [ AuthGuard ] }
 ];

@@ -46,6 +46,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 fontawesome.library.add(
   faUser,
@@ -78,7 +79,8 @@ fontawesome.library.add(
     FaqComponent,
     ContactComponent,
     HelpComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    SearchFormComponent
   ],
 
   entryComponents: [

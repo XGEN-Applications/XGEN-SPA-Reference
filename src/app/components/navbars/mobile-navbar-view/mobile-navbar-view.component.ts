@@ -19,4 +19,10 @@ export class MobileNavbarViewComponent implements OnInit {
     this.show = false;
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    this.app.logout();
+    this.app.navigate('login');
+  }
+
 }

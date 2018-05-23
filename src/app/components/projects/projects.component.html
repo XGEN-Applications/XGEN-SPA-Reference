@@ -5,9 +5,26 @@
       <hr>
     </div>
     <div class="col-12 text-left mb-3">
-      <div class="cursor-pointer" (click)="upsertProject()">
-        <span class="add-project-button">Add project</span>
-        <i class="far fa-plus-square ml-3"></i>
+      <div class="row">
+        <div class="col-8">
+          <div class="cursor-pointer" (click)="upsertProject()">
+            <span class="add-project-button">Add project</span>
+            <i class="far fa-plus-square ml-3"></i>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="pull-right">
+            <div class="input-group">
+              <input [(ngModel)]="search" name="search" type="text" class="form-control" placeholder="Quick search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="searchProject()" type="button">
+                  <img src="assets/search.png" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                </button>
+                </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
       </div>
     </div>
   </div>
