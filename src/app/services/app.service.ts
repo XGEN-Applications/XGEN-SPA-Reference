@@ -13,6 +13,7 @@ export class AppService {
 
   @Output() showMobileNav = new EventEmitter<boolean>();
   @Output() messageAlert = new EventEmitter<any>();
+  @Output() projectSearchResults = new EventEmitter<any>();
 
   public environmentName: string = environment.production ? 'Production' : 'Dev';
   public API_LINK: string = environment.api;
@@ -22,13 +23,23 @@ export class AppService {
   // used for project-form
   public selectedProject: any;
 
+  public projectsFound: Array<any> = [];
+  public searchActive: boolean = false;
+
   public httpOptions;
   
   public showLoading: boolean = false;
 
+
   constructor(private router: Router, public http: HttpClient, private modalService: NgbModal) { 
     this.token = this.getLocalToken();
     if(this.token) this.setupHeaders(this.token);
+    
+    // subscribe to search results
+    this.projectSearchResults.subscribe(results => {
+      this.projectsFound = results;
+      this.searchActive = true;
+    }, err => console.log(err));
   }
 
   getLocalToken() {

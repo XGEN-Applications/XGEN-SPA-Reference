@@ -19,6 +19,13 @@ export class ProjectsComponent implements OnInit {
 
   getProjects(){
     this.app.showLoading = true;
+
+    // display search results
+    if(this.app.searchActive) {
+      this.projects = this.app.projectsFound;
+      return;
+    }
+
     this.app.getProjects().subscribe((response: any) => {
       if(response.statusCode == 200) {
         this.projects = JSON.parse(response.body);
