@@ -38,7 +38,7 @@ export class SearchFormComponent implements OnInit {
       if(results['statusCode'] == 200) {
         projects = JSON.parse(results['body']);
       } else {
-        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(results['body']) });
+        this.app.messageAlert.emit({ alert: 'error', message: results['body'] });
       }
       this.app.projectSearchResults.emit(projects);
       this.app.navigate('home');

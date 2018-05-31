@@ -90,7 +90,7 @@ export class ProjectFormComponent implements OnInit {
       if(result.statusCode == 200) {
         this.app.messageAlert.emit({ alert: 'info', message: 'project updated' });
       } else {
-        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
+        this.app.messageAlert.emit({ alert: 'error', message: result.body });
       }
 
     }, err => {
@@ -104,7 +104,7 @@ export class ProjectFormComponent implements OnInit {
       if(result.statusCode == 200) {
         this.app.messageAlert.emit({ alert: 'info', message: 'project inserted' });
       } else {
-        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
+        this.app.messageAlert.emit({ alert: 'error', message: result.body });
       }
 
     }, err => {

@@ -27,11 +27,11 @@ export class RegisterComponent implements OnInit {
 
       // create message based on server response
       if(result['statusCode'] == 200) {
-        message = { alert: 'info', message: JSON.parse(result['body'])};
+        message = { alert: 'info', message: result['body']};
         this.app.showLoading = false;
         this.app.navigate('login');
       } else {
-        message = { alert: 'error', message: JSON.parse(result['body'])}
+        message = { alert: 'error', message: result['body']}
       }
 
       this.app.showLoading = false;

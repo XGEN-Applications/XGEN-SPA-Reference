@@ -28,10 +28,10 @@ export class ProjectsComponent implements OnInit {
 
     this.app.getProjects().subscribe((response: any) => {
       if(response.statusCode == 200) {
-        this.projects = JSON.parse(response.body);
+        this.projects = response.body;
       } else {
         this.projects = [];
-        const message = JSON.parse(response.body);
+        const message = response.body;
         this.app.messageAlert.emit({ alert: 'error', message });
         if(message == 'unathorized') this.app.navigate('login');
       }
@@ -62,7 +62,7 @@ export class ProjectsComponent implements OnInit {
         this.projects.splice(index, 1);
         this.app.messageAlert.emit({ alert: 'info', message: 'project deleted' });
       } else {
-        this.app.messageAlert.emit({ alert: 'error', message: JSON.parse(result.body) });
+        this.app.messageAlert.emit({ alert: 'error', message: result.body });
       }
     })
   }

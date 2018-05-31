@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
   login() {
     this.app.showLoading = true;
     this.app.login(this.credentials).subscribe(result => {
-      if(result['statusCode'] == 200) {
+      if(result['statusCode'] == 200) {        
         // login success, save token to service and local storage
-        const { token } = JSON.parse(result['body']);
+        const { token } = result['body'];
         localStorage.setItem('token', token);
         this.app.token = token;
         this.app.setupHeaders(token);
